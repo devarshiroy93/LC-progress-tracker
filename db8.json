@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Find Peak Element",
+    "lcId": 162,
+    "description": "Find a peak element index",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Slope Comparison",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Capacity To Ship Packages Within D Days",
+    "lcId": 1011,
+    "description": "Minimum ship capacity to meet deadline",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Search on Answer",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Koko Eating Bananas",
+    "lcId": 875,
+    "description": "Minimum eating speed",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Search on Answer",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Cutting Ribbons",
+    "lcId": 1891,
+    "description": "Maximum ribbon length",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Search on Answer",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Search in Rotated Sorted Array",
+    "lcId": 33,
+    "description": "Search target in rotated array",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Rotated Array Logic",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Find Minimum in Rotated Sorted Array",
+    "lcId": 153,
+    "description": "Find minimum in rotated array",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Rotation Pivot",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Single Element in a Sorted Array",
+    "lcId": 540,
+    "description": "Find element appearing once",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Index Parity",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Find First and Last Position of Element in Sorted Array",
+    "lcId": 34,
+    "description": "Find start and end indices",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Lower/Upper Bound",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Missing Element in Sorted Array",
+    "lcId": 1060,
+    "description": "Find kth missing number",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Missing Count Function",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Kth Missing Positive Number",
+    "lcId": 1539,
+    "description": "Find kth missing positive",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Index Gap Calculation",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Pow(x, n)",
+    "lcId": 50,
+    "description": "Compute power efficiently",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Binary Exponentiation",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Median of Two Sorted Arrays",
+    "lcId": 4,
+    "description": "Find median in two sorted arrays",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Partition Logic",
+    "difficulty": "Hard"
+  }
+]
