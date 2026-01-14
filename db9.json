@@ -1,0 +1,182 @@
+[
+  {
+    "name": "LRU Cache",
+    "lcId": 146,
+    "description": "Cache with eviction policy",
+    "exIpOp": "",
+    "pattern": "Design",
+    "patternVariant": "HashMap + Doubly Linked List",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Implement Trie (Prefix Tree)",
+    "lcId": 208,
+    "description": "Prefix-based string storage",
+    "exIpOp": "",
+    "pattern": "Design",
+    "patternVariant": "Trie",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Cache With Time Limit",
+    "lcId": 2622,
+    "description": "Key-value cache with expiration",
+    "exIpOp": "",
+    "pattern": "Design",
+    "patternVariant": "TTL + Map",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Random Pick Index",
+    "lcId": 398,
+    "description": "Pick index randomly for target",
+    "exIpOp": "",
+    "pattern": "Design",
+    "patternVariant": "Reservoir Sampling",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Range Sum Query - Immutable",
+    "lcId": 303,
+    "description": "Query sum of subarray",
+    "exIpOp": "",
+    "pattern": "Prefix Sum",
+    "patternVariant": "Immutable Array",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Product of Array Except Self",
+    "lcId": 238,
+    "description": "Compute product without division",
+    "exIpOp": "",
+    "pattern": "Array",
+    "patternVariant": "Prefix + Suffix Product",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Merge Intervals",
+    "lcId": 56,
+    "description": "Merge overlapping intervals",
+    "exIpOp": "",
+    "pattern": "Intervals",
+    "patternVariant": "Sort + Merge",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Interval List Intersections",
+    "lcId": 986,
+    "description": "Find intersections between interval lists",
+    "exIpOp": "",
+    "pattern": "Intervals",
+    "patternVariant": "Two Pointers",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Insert Interval",
+    "lcId": 57,
+    "description": "",
+    "exIpOp": "",
+    "pattern": "Intervals",
+    "patternVariant": "Merge with Insertion",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Trapping Rain Water",
+    "lcId": 42,
+    "description": "Calculate trapped rain water",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "Left/Right Max",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "First Missing Positive",
+    "lcId": 41,
+    "description": "Find smallest missing positive",
+    "exIpOp": "",
+    "pattern": "Array",
+    "patternVariant": "Index Placement",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Add Two Numbers",
+    "lcId": 2,
+    "description": "Add numbers represented by linked lists",
+    "exIpOp": "",
+    "pattern": "Linked List",
+    "patternVariant": "Carry Simulation",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Copy List with Random Pointer",
+    "lcId": 138,
+    "description": "Deep copy linked list with random pointers",
+    "exIpOp": "",
+    "pattern": "Linked List",
+    "patternVariant": "Node Weaving / HashMap",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Reverse Nodes in k-Group",
+    "lcId": 25,
+    "description": "Reverse nodes in groups of k",
+    "exIpOp": "",
+    "pattern": "Linked List",
+    "patternVariant": "Group Reversal",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Odd Even Linked List",
+    "lcId": 328,
+    "description": "Group odd and even positioned nodes",
+    "exIpOp": "",
+    "pattern": "Linked List",
+    "patternVariant": "Pointer Rewiring",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Evaluate Reverse Polish Notation",
+    "lcId": 150,
+    "description": "Evaluate postfix expression",
+    "exIpOp": "",
+    "pattern": "Stack",
+    "patternVariant": "Expression Evaluation",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Simplify Path",
+    "lcId": 71,
+    "description": "Canonical Unix path",
+    "exIpOp": "",
+    "pattern": "Stack",
+    "patternVariant": "Path Normalization",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Basic Calculator II",
+    "lcId": 227,
+    "description": "Evaluate expression with + - * /",
+    "exIpOp": "",
+    "pattern": "Stack",
+    "patternVariant": "Operator Precedence",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Valid Parentheses",
+    "lcId": 20,
+    "description": "Check balanced parentheses",
+    "exIpOp": "",
+    "pattern": "Stack",
+    "patternVariant": "Bracket Matching",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Minimum Remove to Make Valid Parentheses",
+    "lcId": 1249,
+    "description": "Remove minimum invalid parentheses",
+    "exIpOp": "",
+    "pattern": "Stack",
+    "patternVariant": "Index Tracking",
+    "difficulty": "Medium"
+  }
+]
