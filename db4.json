@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Climbing Stairs",
+    "lcId": 70,
+    "description": "Count distinct ways to climb stairs",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "1D DP (Fibonacci)",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "House Robber",
+    "lcId": 198,
+    "description": "Max sum without adjacent elements",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "1D DP (Include/Exclude)",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "House Robber II",
+    "lcId": 213,
+    "description": "House robber with circular constraint",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "1D DP (Cycle Split)",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Coin Change",
+    "lcId": 322,
+    "description": "Minimum coins to make amount",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "Unbounded Knapsack (Min)",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Coin Change II",
+    "lcId": 518,
+    "description": "Number of ways to make amount",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "Unbounded Knapsack (Count)",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Decode Ways",
+    "lcId": 91,
+    "description": "Count ways to decode string",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "1D DP (String Parsing)",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Word Break",
+    "lcId": 139,
+    "description": "Check if string can be segmented",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "DP + HashSet",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Partition Equal Subset Sum",
+    "lcId": 416,
+    "description": "Partition array into equal sum subsets",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "0/1 Knapsack",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Longest Increasing Path in a Matrix",
+    "lcId": 329,
+    "description": "Longest increasing path in grid",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "DFS + Memoization",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Unique Paths",
+    "lcId": 62,
+    "description": "Count paths in grid",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "2D DP Grid",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Longest Common Subsequence",
+    "lcId": 1143,
+    "description": "Find LCS length of two strings",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "2D DP (Strings)",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Palindromic Substrings",
+    "lcId": 647,
+    "description": "Count palindromic substrings",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "Expand Around Center / DP",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Longest Palindromic Substring",
+    "lcId": 5,
+    "description": "Find longest palindromic substring",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "Expand Around Center",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Maximum Subarray",
+    "lcId": 53,
+    "description": "Maximum subarray sum",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "Kadane's Algorithm",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Valid Palindrome III",
+    "lcId": 1216,
+    "description": "Check if string can be palindrome after k deletions",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "2D DP (Palindrome)",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Path with Maximum Gold",
+    "lcId": 1219,
+    "description": "Collect max gold without revisiting cells",
+    "exIpOp": "",
+    "pattern": "Dynamic Programming",
+    "patternVariant": "Backtracking + Memo (Grid)",
+    "difficulty": "Medium"
+  }
+]
