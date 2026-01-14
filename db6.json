@@ -1,0 +1,173 @@
+[
+  {
+    "name": "Longest Substring Without Repeating Characters",
+    "lcId": 3,
+    "description": "Longest substring with all unique characters",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "Unique Constraint Window",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Permutation in String",
+    "lcId": 567,
+    "description": "Check if s2 contains a permutation of s1",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "Fixed Window Frequency",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Minimum Size Subarray Sum",
+    "lcId": 209,
+    "description": "Smallest subarray with sum ≥ target",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "Variable Window Sum",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Subarray Sum Equals K",
+    "lcId": 560,
+    "description": "Count subarrays summing to k",
+    "exIpOp": "",
+    "pattern": "Prefix Sum",
+    "patternVariant": "HashMap Count",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Continuous Subarray Sum",
+    "lcId": 523,
+    "description": "Check subarray sum multiple of k",
+    "exIpOp": "",
+    "pattern": "Prefix Sum",
+    "patternVariant": "Modulo Hashing",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Subarray Sums Divisible by K",
+    "lcId": 974,
+    "description": "Count subarrays divisible by k",
+    "exIpOp": "",
+    "pattern": "Prefix Sum",
+    "patternVariant": "Modulo Frequency",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Count Number of Nice Subarrays",
+    "lcId": 1248,
+    "description": "Count subarrays with exactly k odd numbers",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "At Most K Trick",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Longest Repeating Character Replacement",
+    "lcId": 424,
+    "description": "Longest substring after k replacements",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "Max Frequency Window",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Max Consecutive Ones III",
+    "lcId": 1004,
+    "description": "Longest subarray with at most k zeros",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "At Most K Flips",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
+    "lcId": 1438,
+    "description": "Longest subarray within diff limit",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "Monotonic Deques",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Two Sum II - Input Array Is Sorted",
+    "lcId": 167,
+    "description": "Find pair summing to target in sorted array",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "Opposite Ends",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "3Sum",
+    "lcId": 15,
+    "description": "Find triplets summing to zero",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "Sorted Fix + Scan",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "3Sum Closest",
+    "lcId": 16,
+    "description": "Closest sum to target",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "Sorted Fix + Scan",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "4Sum",
+    "lcId": 18,
+    "description": "Quadruplets summing to target",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "K-Sum Reduction",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Container With Most Water",
+    "lcId": 11,
+    "description": "Max area between vertical lines",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "Greedy Shrink",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Valid Palindrome II",
+    "lcId": 680,
+    "description": "Check palindrome after at most one deletion",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "One Skip Allowed",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Squares of a Sorted Array",
+    "lcId": 977,
+    "description": "Sorted squares of sorted array",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "Merge Ends",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Rotate Array",
+    "lcId": 189,
+    "description": "Rotate array by k steps",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "Reverse Sections",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Remove Duplicates from Sorted Array II",
+    "lcId": 80,
+    "description": "Allow at most two duplicates",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "Slow-Fast Pointer",
+    "difficulty": "Medium"
+  }
+]
