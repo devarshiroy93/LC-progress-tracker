@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Binary Tree Maximum Path Sum",
+    "lcId": 124,
+    "description": "Maximum sum of any path in binary tree",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "Postorder DFS (Global Max)",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "All Nodes Distance K in Binary Tree",
+    "lcId": 863,
+    "description": "Find all nodes at distance K from target",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "Parent Mapping + BFS",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Binary Tree Right Side View",
+    "lcId": 199,
+    "description": "Visible nodes from right side",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "Level Order Traversal",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Diameter of Binary Tree",
+    "lcId": 543,
+    "description": "Longest path between any two nodes",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "Postorder DFS (Height)",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Lowest Common Ancestor of a Binary Tree",
+    "lcId": 236,
+    "description": "Find LCA of two nodes",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "Recursive DFS",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Validate Binary Search Tree",
+    "lcId": 98,
+    "description": "Check if tree is valid BST",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "Inorder / Bounds Check",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Convert Sorted Array to Binary Search Tree",
+    "lcId": 108,
+    "description": "Build height-balanced BST",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "Divide and Conquer",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Sum of Left Leaves",
+    "lcId": 404,
+    "description": "Sum values of all left leaf nodes",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "DFS with State",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Deepest Leaves Sum",
+    "lcId": 1302,
+    "description": "Sum of deepest level nodes",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "Level Order Traversal",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Binary Tree Zigzag Level Order Traversal",
+    "lcId": 103,
+    "description": "Zigzag level order traversal",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "BFS Direction Toggle",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Path Sum II",
+    "lcId": 113,
+    "description": "All root-to-leaf paths with target sum",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "DFS Backtracking",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Invert Binary Tree",
+    "lcId": 226,
+    "description": "Invert a binary tree",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "DFS / BFS",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Vertical Order Traversal of a Binary Tree",
+    "lcId": 987,
+    "description": "Vertical order traversal with sorting",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "BFS + Coordinate Mapping",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Delete Node in a BST",
+    "lcId": 450,
+    "description": "Delete a node from BST",
+    "exIpOp": "",
+    "pattern": "Binary Search Tree",
+    "patternVariant": "Recursive Re-linking",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Insert into a Binary Search Tree",
+    "lcId": 701,
+    "description": "Insert value into BST",
+    "exIpOp": "",
+    "pattern": "Binary Search Tree",
+    "patternVariant": "Recursive Insert",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Range Sum of BST",
+    "lcId": 938,
+    "description": "Sum nodes in range",
+    "exIpOp": "",
+    "pattern": "Binary Search Tree",
+    "patternVariant": "Pruned DFS",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Lowest Common Ancestor of a Binary Search Tree",
+    "lcId": 235,
+    "description": "Find LCA leveraging BST property",
+    "exIpOp": "",
+    "pattern": "Binary Search Tree",
+    "patternVariant": "BST Property Navigation",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Serialize and Deserialize Binary Tree",
+    "lcId": 297,
+    "description": "Convert tree to string and back",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "DFS Serialization",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Boundary of Binary Tree",
+    "lcId": 545,
+    "description": "Print boundary nodes of tree",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "Boundary Traversal",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Construct Binary Tree from String",
+    "lcId": 536,
+    "description": "Build tree from parenthesized string",
+    "exIpOp": "",
+    "pattern": "Binary Tree",
+    "patternVariant": "Stack / Recursive Parsing",
+    "difficulty": "Medium"
+  }
+]
