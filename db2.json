@@ -1,0 +1,173 @@
+[
+  {
+    "name": "The Earliest Moment When Everyone Become Friends",
+    "lcId": 1101,
+    "description": "Find earliest time when all nodes become connected",
+    "exIpOp": "",
+    "pattern": "Union Find",
+    "patternVariant": "Time-ordered Connectivity",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Redundant Connection",
+    "lcId": 684,
+    "description": "Detect extra edge creating a cycle",
+    "exIpOp": "",
+    "pattern": "Union Find",
+    "patternVariant": "Cycle Detection",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Number of Islands II",
+    "lcId": 305,
+    "description": "Dynamic island count after land additions",
+    "exIpOp": "",
+    "pattern": "Union Find",
+    "patternVariant": "Dynamic Connectivity",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Number of Operations to Make Network Connected",
+    "lcId": 1319,
+    "description": "Minimum operations to connect all nodes",
+    "exIpOp": "",
+    "pattern": "Union Find",
+    "patternVariant": "Extra Edges Utilization",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Number of Connected Components in an Undirected Graph",
+    "lcId": 323,
+    "description": "Count connected components",
+    "exIpOp": "",
+    "pattern": "Union Find",
+    "patternVariant": "Component Counting",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Number of Provinces",
+    "lcId": 547,
+    "description": "Find number of connected components in adjacency matrix",
+    "exIpOp": "",
+    "pattern": "Union Find",
+    "patternVariant": "Matrix Connectivity",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Surrounded Regions",
+    "lcId": 130,
+    "description": "Capture surrounded regions on a board",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "DFS/BFS Boundary Flood Fill",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Number of Islands",
+    "lcId": 200,
+    "description": "Count islands in grid",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "DFS/BFS Grid Traversal",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Clone Graph",
+    "lcId": 133,
+    "description": "Deep copy an undirected graph",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "DFS/BFS with HashMap",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Course Schedule",
+    "lcId": 207,
+    "description": "Check if all courses can be finished",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "Cycle Detection (Topological Sort)",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Course Schedule II",
+    "lcId": 210,
+    "description": "Return valid course order",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "Topological Sort (Kahn/DFS)",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Network Delay Time",
+    "lcId": 743,
+    "description": "Find time for signal to reach all nodes",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "Dijkstra",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Cheapest Flights Within K Stops",
+    "lcId": 787,
+    "description": "Cheapest path with stop constraint",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "Modified Dijkstra / BFS Layers",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Flood Fill",
+    "lcId": 733,
+    "description": "Fill connected region with new color",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "DFS/BFS Grid",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Shortest Path in Binary Matrix",
+    "lcId": 1091,
+    "description": "Shortest path in 8-direction grid",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "BFS Grid Shortest Path",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Rotting Oranges",
+    "lcId": 994,
+    "description": "Minimum time to rot all oranges",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "Multi-source BFS",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Pacific Atlantic Water Flow",
+    "lcId": 417,
+    "description": "Cells flowing to both oceans",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "Reverse DFS/BFS",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "All Paths From Source to Target",
+    "lcId": 797,
+    "description": "Enumerate all paths in DAG",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "DFS Path Enumeration",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Word Ladder",
+    "lcId": 127,
+    "description": "Shortest transformation sequence",
+    "exIpOp": "",
+    "pattern": "Graph",
+    "patternVariant": "BFS with Implicit Graph",
+    "difficulty": "Hard"
+  }
+]
