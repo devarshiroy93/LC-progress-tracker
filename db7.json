@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Kth Largest Element in an Array",
+    "lcId": 215,
+    "description": "Find kth largest element",
+    "exIpOp": "",
+    "pattern": "Heap",
+    "patternVariant": "Min Heap of Size K",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Top K Frequent Elements",
+    "lcId": 347,
+    "description": "Find k most frequent elements",
+    "exIpOp": "",
+    "pattern": "Heap",
+    "patternVariant": "Frequency Heap",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Sliding Window Median",
+    "lcId": 480,
+    "description": "Median of each sliding window",
+    "exIpOp": "",
+    "pattern": "Heap",
+    "patternVariant": "Two Heaps + Lazy Deletion",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Find K Closest Points to Origin",
+    "lcId": 973,
+    "description": "Return k closest points to origin",
+    "exIpOp": "",
+    "pattern": "Heap",
+    "patternVariant": "Max Heap of Size K",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Kth Smallest Element in a Sorted Matrix",
+    "lcId": 378,
+    "description": "Find kth smallest in sorted matrix",
+    "exIpOp": "",
+    "pattern": "Heap",
+    "patternVariant": "Merge K Sorted Lists",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Merge k Sorted Lists",
+    "lcId": 23,
+    "description": "Merge k sorted linked lists",
+    "exIpOp": "",
+    "pattern": "Heap",
+    "patternVariant": "K-way Merge",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Network Delay Time",
+    "lcId": 743,
+    "description": "Find time for signal to reach all nodes",
+    "exIpOp": "",
+    "pattern": "Heap",
+    "patternVariant": "Dijkstra Priority Queue",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Swim in Rising Water",
+    "lcId": 778,
+    "description": "Minimum time to reach bottom-right",
+    "exIpOp": "",
+    "pattern": "Heap",
+    "patternVariant": "Dijkstra on Grid",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Random Pick with Weight",
+    "lcId": 528,
+    "description": "Pick index by weight",
+    "exIpOp": "",
+    "pattern": "Binary Search",
+    "patternVariant": "Prefix Sum + Random",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Design Authentication Manager",
+    "lcId": 1797,
+    "description": "Manage expiring tokens",
+    "exIpOp": "",
+    "pattern": "Design",
+    "patternVariant": "Heap + HashMap",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Online Stock Span",
+    "lcId": 901,
+    "description": "Calculate stock span per day",
+    "exIpOp": "",
+    "pattern": "Monotonic Stack",
+    "patternVariant": "Span Aggregation",
+    "difficulty": "Medium"
+  }
+]
