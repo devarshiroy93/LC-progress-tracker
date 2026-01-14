@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Generate Parentheses",
+    "lcId": 22,
+    "description": "Generate all valid parentheses combinations",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Balanced Parentheses",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Combination Sum",
+    "lcId": 39,
+    "description": "Find combinations that sum to target",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Unbounded Choices",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Combination Sum II",
+    "lcId": 40,
+    "description": "Combinations with no reuse and duplicates",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Dedup + Bounded Choices",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Combination Sum III",
+    "lcId": 216,
+    "description": "K numbers sum to target",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Fixed Length Combination",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Subsets",
+    "lcId": 78,
+    "description": "Generate all subsets",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Binary Choice",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Subsets II",
+    "lcId": 90,
+    "description": "Generate subsets without duplicates",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Dedup via Sorting",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Permutations",
+    "lcId": 46,
+    "description": "Generate all permutations",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Swap / Used Array",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Permutations II",
+    "lcId": 47,
+    "description": "Generate unique permutations",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Dedup with Sorting",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Combinations",
+    "lcId": 77,
+    "description": "Generate k-length combinations",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Choose / Skip",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Palindrome Partitioning",
+    "lcId": 131,
+    "description": "Partition string into palindromes",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "DFS + Palindrome Check",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Word Search",
+    "lcId": 79,
+    "description": "Search word in grid",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "DFS Grid with Visited",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "N-Queens",
+    "lcId": 51,
+    "description": "Place queens without attacking",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Constraint Propagation",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Letter Case Permutation",
+    "lcId": 784,
+    "description": "Generate case permutations",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Decision Tree",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Expression Add Operators",
+    "lcId": 282,
+    "description": "Insert operators to reach target",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Expression Evaluation",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "All Paths From Source to Target",
+    "lcId": 797,
+    "description": "Enumerate all paths in DAG",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "DFS Path Build",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Remove Invalid Parentheses",
+    "lcId": 301,
+    "description": "Remove minimum invalid parentheses",
+    "exIpOp": "",
+    "pattern": "Backtracking",
+    "patternVariant": "Pruned DFS",
+    "difficulty": "Hard"
+  }
+]
