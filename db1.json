@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Remove Nodes From Linked List",
+    "lcId": 2487,
+    "description": "Remove nodes that have a greater value node to their right",
+    "exIpOp": "",
+    "pattern": "Linked List",
+    "patternVariant": "Monotonic Stack",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Smallest Subsequence of Distinct Characters",
+    "lcId": 1081,
+    "description": "Lexicographically smallest subsequence with all distinct characters",
+    "exIpOp": "",
+    "pattern": "Monotonic Stack",
+    "patternVariant": "Greedy + Frequency Count",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Next Greater Node In Linked List",
+    "lcId": 1019,
+    "description": "Find next greater value for each node",
+    "exIpOp": "",
+    "pattern": "Linked List",
+    "patternVariant": "Monotonic Stack",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Final Prices With a Special Discount in a Shop",
+    "lcId": 1475,
+    "description": "Apply discount using next smaller element",
+    "exIpOp": "",
+    "pattern": "Monotonic Stack",
+    "patternVariant": "Next Smaller Element",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Remove All Adjacent Duplicates in String II",
+    "lcId": 1209,
+    "description": "Remove k adjacent duplicates repeatedly",
+    "exIpOp": "",
+    "pattern": "Stack",
+    "patternVariant": "Counted Stack",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Min Stack",
+    "lcId": 155,
+    "description": "Stack supporting constant time min retrieval",
+    "exIpOp": "",
+    "pattern": "Design",
+    "patternVariant": "Stack with Auxiliary State",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Longest Substring with At Most K Distinct Characters",
+    "lcId": 340,
+    "description": "Find longest substring with ≤ k distinct chars",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "At Most K Distinct",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Fruit Into Baskets",
+    "lcId": 904,
+    "description": "Longest subarray with at most two distinct values",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "At Most K Distinct",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Reverse Substrings Between Each Pair of Parentheses",
+    "lcId": 1190,
+    "description": "Reverse substrings inside parentheses",
+    "exIpOp": "",
+    "pattern": "Stack",
+    "patternVariant": "Bracket Matching",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Asteroid Collision",
+    "lcId": 735,
+    "description": "Simulate asteroid collisions",
+    "exIpOp": "",
+    "pattern": "Stack",
+    "patternVariant": "Collision Simulation",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Lexicographically Minimum String After Removing Stars",
+    "lcId": 3170,
+    "description": "",
+    "exIpOp": "",
+    "pattern": "Greedy",
+    "patternVariant": "Priority + Stack",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Using a Robot to Print the Lexicographically Smallest String",
+    "lcId": 2434,
+    "description": "",
+    "exIpOp": "",
+    "pattern": "Greedy",
+    "patternVariant": "Stack + Min Suffix",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Minimum Window Substring",
+    "lcId": 76,
+    "description": "Smallest substring containing all target characters",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "Fixed Requirement Window",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Find All Anagrams in a String",
+    "lcId": 438,
+    "description": "Find starting indices of anagram substrings",
+    "exIpOp": "",
+    "pattern": "Sliding Window",
+    "patternVariant": "Frequency Matching",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Sort Characters By Frequency",
+    "lcId": 451,
+    "description": "",
+    "exIpOp": "",
+    "pattern": "Hashing",
+    "patternVariant": "Bucket Sort",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Decode String",
+    "lcId": 394,
+    "description": "Decode nested encoded strings",
+    "exIpOp": "",
+    "pattern": "Stack",
+    "patternVariant": "Nested Expansion",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Remove All Adjacent Duplicates In String",
+    "lcId": 1047,
+    "description": "",
+    "exIpOp": "",
+    "pattern": "Stack",
+    "patternVariant": "Pair Elimination",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Valid Anagram",
+    "lcId": 242,
+    "description": "",
+    "exIpOp": "",
+    "pattern": "Hashing",
+    "patternVariant": "Frequency Count",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Backspace String Compare",
+    "lcId": 844,
+    "description": "",
+    "exIpOp": "",
+    "pattern": "Two Pointers",
+    "patternVariant": "Reverse Traversal",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "First Unique Character in a String",
+    "lcId": 387,
+    "description": "",
+    "exIpOp": "",
+    "pattern": "Hashing",
+    "patternVariant": "Frequency + Scan",
+    "difficulty": "Easy"
+  }
+]
