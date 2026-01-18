@@ -1,182 +1,90 @@
 [
   {
-    "name": "Binary Tree Maximum Path Sum",
-    "lcId": 124,
-    "description": "Maximum sum of any path in binary tree",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "Postorder DFS (Global Max)",
-    "difficulty": "Hard"
+    "id": "bt-0001-124",
+    "lc_number": 124,
+    "title": "Binary Tree Maximum Path Sum",
+    "statement": "Return the maximum sum of any path in a binary tree.",
+    "example_input": "root = [-10,9,20,null,null,15,7]",
+    "example_output": "42",
+    "example_explanation": "The path 15 → 20 → 7 gives the maximum sum.",
+    "last_status": null,
+    "last_attempted_at": null
   },
   {
-    "name": "All Nodes Distance K in Binary Tree",
-    "lcId": 863,
-    "description": "Find all nodes at distance K from target",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "Parent Mapping + BFS",
-    "difficulty": "Medium"
+    "id": "bt-0002-863",
+    "lc_number": 863,
+    "title": "All Nodes Distance K in Binary Tree",
+    "statement": "Find all nodes that are distance K from a given target node.",
+    "example_input": "root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, k = 2",
+    "example_output": "[7,4,1]",
+    "example_explanation": "These nodes are exactly 2 edges away from the target.",
+    "last_status": null,
+    "last_attempted_at": null
   },
   {
-    "name": "Binary Tree Right Side View",
-    "lcId": 199,
-    "description": "Visible nodes from right side",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "Level Order Traversal",
-    "difficulty": "Medium"
+    "id": "bt-0003-199",
+    "lc_number": 199,
+    "title": "Binary Tree Right Side View",
+    "statement": "Return the values of the nodes visible from the right side.",
+    "example_input": "root = [1,2,3,null,5,null,4]",
+    "example_output": "[1,3,4]",
+    "example_explanation": "The rightmost node at each level is visible.",
+    "last_status": null,
+    "last_attempted_at": null
   },
   {
-    "name": "Diameter of Binary Tree",
-    "lcId": 543,
-    "description": "Longest path between any two nodes",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "Postorder DFS (Height)",
-    "difficulty": "Easy"
+    "id": "bt-0004-543",
+    "lc_number": 543,
+    "title": "Diameter of Binary Tree",
+    "statement": "Return the length of the longest path between any two nodes.",
+    "example_input": "root = [1,2,3,4,5]",
+    "example_output": "3",
+    "example_explanation": "The path 4 → 2 → 1 → 3 has length 3.",
+    "last_status": null,
+    "last_attempted_at": null
   },
   {
-    "name": "Lowest Common Ancestor of a Binary Tree",
-    "lcId": 236,
-    "description": "Find LCA of two nodes",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "Recursive DFS",
-    "difficulty": "Medium"
+    "id": "bt-0005-236",
+    "lc_number": 236,
+    "title": "Lowest Common Ancestor of a Binary Tree",
+    "statement": "Find the lowest common ancestor of two nodes in a binary tree.",
+    "example_input": "root = [3,5,1,6,2,0,8], p = 5, q = 1",
+    "example_output": "3",
+    "example_explanation": "Node 3 is the lowest node that has both 5 and 1 as descendants.",
+    "last_status": null,
+    "last_attempted_at": null
   },
   {
-    "name": "Validate Binary Search Tree",
-    "lcId": 98,
-    "description": "Check if tree is valid BST",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "Inorder / Bounds Check",
-    "difficulty": "Medium"
+    "id": "bt-0006-98",
+    "lc_number": 98,
+    "title": "Validate Binary Search Tree",
+    "statement": "Determine if a binary tree is a valid binary search tree.",
+    "example_input": "root = [2,1,3]",
+    "example_output": "true",
+    "example_explanation": "The tree satisfies BST ordering constraints.",
+    "last_status": null,
+    "last_attempted_at": null
   },
   {
-    "name": "Convert Sorted Array to Binary Search Tree",
-    "lcId": 108,
-    "description": "Build height-balanced BST",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "Divide and Conquer",
-    "difficulty": "Easy"
+    "id": "bt-0007-108",
+    "lc_number": 108,
+    "title": "Convert Sorted Array to Binary Search Tree",
+    "statement": "Convert a sorted array into a height-balanced BST.",
+    "example_input": "nums = [-10,-3,0,5,9]",
+    "example_output": "[0,-3,9,-10,null,5]",
+    "example_explanation": "Middle elements are chosen to keep the tree balanced.",
+    "last_status": null,
+    "last_attempted_at": null
   },
   {
-    "name": "Sum of Left Leaves",
-    "lcId": 404,
-    "description": "Sum values of all left leaf nodes",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "DFS with State",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "Deepest Leaves Sum",
-    "lcId": 1302,
-    "description": "Sum of deepest level nodes",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "Level Order Traversal",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Binary Tree Zigzag Level Order Traversal",
-    "lcId": 103,
-    "description": "Zigzag level order traversal",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "BFS Direction Toggle",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Path Sum II",
-    "lcId": 113,
-    "description": "All root-to-leaf paths with target sum",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "DFS Backtracking",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Invert Binary Tree",
-    "lcId": 226,
-    "description": "Invert a binary tree",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "DFS / BFS",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "Vertical Order Traversal of a Binary Tree",
-    "lcId": 987,
-    "description": "Vertical order traversal with sorting",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "BFS + Coordinate Mapping",
-    "difficulty": "Hard"
-  },
-  {
-    "name": "Delete Node in a BST",
-    "lcId": 450,
-    "description": "Delete a node from BST",
-    "exIpOp": "",
-    "pattern": "Binary Search Tree",
-    "patternVariant": "Recursive Re-linking",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Insert into a Binary Search Tree",
-    "lcId": 701,
-    "description": "Insert value into BST",
-    "exIpOp": "",
-    "pattern": "Binary Search Tree",
-    "patternVariant": "Recursive Insert",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Range Sum of BST",
-    "lcId": 938,
-    "description": "Sum nodes in range",
-    "exIpOp": "",
-    "pattern": "Binary Search Tree",
-    "patternVariant": "Pruned DFS",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "Lowest Common Ancestor of a Binary Search Tree",
-    "lcId": 235,
-    "description": "Find LCA leveraging BST property",
-    "exIpOp": "",
-    "pattern": "Binary Search Tree",
-    "patternVariant": "BST Property Navigation",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Serialize and Deserialize Binary Tree",
-    "lcId": 297,
-    "description": "Convert tree to string and back",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "DFS Serialization",
-    "difficulty": "Hard"
-  },
-  {
-    "name": "Boundary of Binary Tree",
-    "lcId": 545,
-    "description": "Print boundary nodes of tree",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "Boundary Traversal",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Construct Binary Tree from String",
-    "lcId": 536,
-    "description": "Build tree from parenthesized string",
-    "exIpOp": "",
-    "pattern": "Binary Tree",
-    "patternVariant": "Stack / Recursive Parsing",
-    "difficulty": "Medium"
+    "id": "bt-0008-404",
+    "lc_number": 404,
+    "title": "Sum of Left Leaves",
+    "statement": "Return the sum of all left leaf nodes.",
+    "example_input": "root = [3,9,20,null,null,15,7]",
+    "example_output": "24",
+    "example_explanation": "The left leaves are 9 and 15.",
+    "last_status": null,
+    "last_attempted_at": null
   }
 ]

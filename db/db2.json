@@ -1,173 +1,213 @@
-[
-  {
-    "name": "The Earliest Moment When Everyone Become Friends",
-    "lcId": 1101,
-    "description": "Find earliest time when all nodes become connected",
-    "exIpOp": "",
-    "pattern": "Union Find",
-    "patternVariant": "Time-ordered Connectivity",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Redundant Connection",
-    "lcId": 684,
-    "description": "Detect extra edge creating a cycle",
-    "exIpOp": "",
-    "pattern": "Union Find",
-    "patternVariant": "Cycle Detection",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Number of Islands II",
-    "lcId": 305,
-    "description": "Dynamic island count after land additions",
-    "exIpOp": "",
-    "pattern": "Union Find",
-    "patternVariant": "Dynamic Connectivity",
-    "difficulty": "Hard"
-  },
-  {
-    "name": "Number of Operations to Make Network Connected",
-    "lcId": 1319,
-    "description": "Minimum operations to connect all nodes",
-    "exIpOp": "",
-    "pattern": "Union Find",
-    "patternVariant": "Extra Edges Utilization",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Number of Connected Components in an Undirected Graph",
-    "lcId": 323,
-    "description": "Count connected components",
-    "exIpOp": "",
-    "pattern": "Union Find",
-    "patternVariant": "Component Counting",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Number of Provinces",
-    "lcId": 547,
-    "description": "Find number of connected components in adjacency matrix",
-    "exIpOp": "",
-    "pattern": "Union Find",
-    "patternVariant": "Matrix Connectivity",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Surrounded Regions",
-    "lcId": 130,
-    "description": "Capture surrounded regions on a board",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "DFS/BFS Boundary Flood Fill",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Number of Islands",
-    "lcId": 200,
-    "description": "Count islands in grid",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "DFS/BFS Grid Traversal",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Clone Graph",
-    "lcId": 133,
-    "description": "Deep copy an undirected graph",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "DFS/BFS with HashMap",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Course Schedule",
-    "lcId": 207,
-    "description": "Check if all courses can be finished",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "Cycle Detection (Topological Sort)",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Course Schedule II",
-    "lcId": 210,
-    "description": "Return valid course order",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "Topological Sort (Kahn/DFS)",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Network Delay Time",
-    "lcId": 743,
-    "description": "Find time for signal to reach all nodes",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "Dijkstra",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Cheapest Flights Within K Stops",
-    "lcId": 787,
-    "description": "Cheapest path with stop constraint",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "Modified Dijkstra / BFS Layers",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Flood Fill",
-    "lcId": 733,
-    "description": "Fill connected region with new color",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "DFS/BFS Grid",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "Shortest Path in Binary Matrix",
-    "lcId": 1091,
-    "description": "Shortest path in 8-direction grid",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "BFS Grid Shortest Path",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Rotting Oranges",
-    "lcId": 994,
-    "description": "Minimum time to rot all oranges",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "Multi-source BFS",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Pacific Atlantic Water Flow",
-    "lcId": 417,
-    "description": "Cells flowing to both oceans",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "Reverse DFS/BFS",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "All Paths From Source to Target",
-    "lcId": 797,
-    "description": "Enumerate all paths in DAG",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "DFS Path Enumeration",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Word Ladder",
-    "lcId": 127,
-    "description": "Shortest transformation sequence",
-    "exIpOp": "",
-    "pattern": "Graph",
-    "patternVariant": "BFS with Implicit Graph",
-    "difficulty": "Hard"
-  }
-]
+{
+  "problems": [
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00001",
+      "lc_number": 1101,
+      "title": "The Earliest Moment When Everyone Become Friends",
+      "statement": "Find the earliest time when all nodes in a network become connected.",
+      "example_input": "logs = [[20190101,0,1],[20190104,3,4],[20190107,2,3],[20190211,1,5]], n = 6",
+      "example_output": "20190211",
+      "example_explanation": "At time 20190211, all nodes become connected for the first time.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00002",
+      "lc_number": 684,
+      "title": "Redundant Connection",
+      "statement": "Given edges of a graph, return the edge that creates a cycle.",
+      "example_input": "edges = [[1,2],[1,3],[2,3]]",
+      "example_output": "[2,3]",
+      "example_explanation": "Edge [2,3] introduces a cycle in the graph.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00003",
+      "lc_number": 305,
+      "title": "Number of Islands II",
+      "statement": "Return the number of islands after each land addition.",
+      "example_input": "m = 3, n = 3, positions = [[0,0],[0,1],[1,2],[2,1]]",
+      "example_output": "[1,1,2,3]",
+      "example_explanation": "Each land addition may merge or create new islands dynamically.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00004",
+      "lc_number": 1319,
+      "title": "Number of Operations to Make Network Connected",
+      "statement": "Return the minimum number of operations needed to connect all computers.",
+      "example_input": "n = 4, connections = [[0,1],[0,2],[1,2]]",
+      "example_output": "1",
+      "example_explanation": "One extra cable can be reused to connect the remaining computer.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00005",
+      "lc_number": 323,
+      "title": "Number of Connected Components in an Undirected Graph",
+      "statement": "Count the number of connected components in an undirected graph.",
+      "example_input": "n = 5, edges = [[0,1],[1,2],[3,4]]",
+      "example_output": "2",
+      "example_explanation": "Nodes {0,1,2} form one component and {3,4} form another.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00006",
+      "lc_number": 547,
+      "title": "Number of Provinces",
+      "statement": "Return the number of connected components in an adjacency matrix.",
+      "example_input": "isConnected = [[1,1,0],[1,1,0],[0,0,1]]",
+      "example_output": "2",
+      "example_explanation": "There are two separate provinces in the graph.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00007",
+      "lc_number": 130,
+      "title": "Surrounded Regions",
+      "statement": "Capture all regions surrounded by 'X' on a board.",
+      "example_input": "board = [[\"X\",\"X\",\"X\",\"X\"],[\"X\",\"O\",\"O\",\"X\"],[\"X\",\"X\",\"O\",\"X\"],[\"X\",\"O\",\"X\",\"X\"]]",
+      "example_output": "Captured board",
+      "example_explanation": "Only regions completely surrounded by 'X' are flipped.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00008",
+      "lc_number": 200,
+      "title": "Number of Islands",
+      "statement": "Count the number of islands in a 2D grid.",
+      "example_input": "grid = [[\"1\",\"1\",\"0\"],[\"1\",\"0\",\"0\"],[\"0\",\"0\",\"1\"]]",
+      "example_output": "2",
+      "example_explanation": "Two disconnected groups of land exist.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00009",
+      "lc_number": 133,
+      "title": "Clone Graph",
+      "statement": "Return a deep copy of an undirected graph.",
+      "example_input": "adjList = [[2,4],[1,3],[2,4],[1,3]]",
+      "example_output": "Cloned graph",
+      "example_explanation": "All nodes and edges are duplicated without sharing references.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00010",
+      "lc_number": 207,
+      "title": "Course Schedule",
+      "statement": "Determine if all courses can be finished given prerequisites.",
+      "example_input": "numCourses = 2, prerequisites = [[1,0]]",
+      "example_output": "true",
+      "example_explanation": "Course 0 can be completed before course 1.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00011",
+      "lc_number": 210,
+      "title": "Course Schedule II",
+      "statement": "Return a valid order to complete all courses.",
+      "example_input": "numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]",
+      "example_output": "[0,1,2,3]",
+      "example_explanation": "One valid topological ordering is returned.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00012",
+      "lc_number": 743,
+      "title": "Network Delay Time",
+      "statement": "Return the time it takes for all nodes to receive a signal.",
+      "example_input": "times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2",
+      "example_output": "2",
+      "example_explanation": "All nodes receive the signal after 2 units of time.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00013",
+      "lc_number": 787,
+      "title": "Cheapest Flights Within K Stops",
+      "statement": "Find the cheapest flight price within at most K stops.",
+      "example_input": "n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, k = 1",
+      "example_output": "200",
+      "example_explanation": "The cheapest path uses one stop via node 1.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00014",
+      "lc_number": 733,
+      "title": "Flood Fill",
+      "statement": "Fill a connected region with a new color.",
+      "example_input": "image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, color = 2",
+      "example_output": "[[2,2,2],[2,2,0],[2,0,1]]",
+      "example_explanation": "All connected pixels are recolored.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00015",
+      "lc_number": 1091,
+      "title": "Shortest Path in Binary Matrix",
+      "statement": "Find the shortest path from top-left to bottom-right in a binary matrix.",
+      "example_input": "grid = [[0,1],[1,0]]",
+      "example_output": "2",
+      "example_explanation": "A valid path exists using diagonal movement.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00016",
+      "lc_number": 994,
+      "title": "Rotting Oranges",
+      "statement": "Return the minimum time required to rot all oranges.",
+      "example_input": "grid = [[2,1,1],[1,1,0],[0,1,1]]",
+      "example_output": "4",
+      "example_explanation": "All fresh oranges rot in 4 minutes.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00017",
+      "lc_number": 417,
+      "title": "Pacific Atlantic Water Flow",
+      "statement": "Find cells where water can flow to both the Pacific and Atlantic oceans.",
+      "example_input": "heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1]]",
+      "example_output": "[[0,4],[1,3]]",
+      "example_explanation": "These cells can reach both oceans following height constraints.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00018",
+      "lc_number": 797,
+      "title": "All Paths From Source to Target",
+      "statement": "Return all possible paths from source to target in a DAG.",
+      "example_input": "graph = [[1,2],[3],[3],[]]",
+      "example_output": "[[0,1,3],[0,2,3]]",
+      "example_explanation": "All valid paths from node 0 to node 3 are returned.",
+      "last_status": null,
+      "last_attempted_at": null
+    },
+    {
+      "id": "1a9c3c21-5b8e-4d7b-b8f1-1101f1a00019",
+      "lc_number": 127,
+      "title": "Word Ladder",
+      "statement": "Return the length of the shortest transformation sequence from beginWord to endWord.",
+      "example_input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]",
+      "example_output": "5",
+      "example_explanation": "The shortest transformation sequence length is 5.",
+      "last_status": null,
+      "last_attempted_at": null
+    }
+  ]
+}
