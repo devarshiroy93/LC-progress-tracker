@@ -1,182 +1,202 @@
 [
   {
-    "name": "Remove Nodes From Linked List",
-    "lcId": 2487,
-    "description": "Remove nodes that have a greater value node to their right",
-    "exIpOp": "",
-    "pattern": "Linked List",
-    "patternVariant": "Monotonic Stack",
-    "difficulty": "Medium"
+    "number": 2487,
+    "title": "Remove Nodes From Linked List",
+    "statement": "Remove nodes from a linked list that have a node with a greater value to their right.",
+    "example": {
+      "input": "head = [5,2,13,3,8]",
+      "output": "[13,8]",
+      "explanation": "Nodes 5, 2, and 3 are removed because a greater value exists to their right."
+    }
   },
   {
-    "name": "Smallest Subsequence of Distinct Characters",
-    "lcId": 1081,
-    "description": "Lexicographically smallest subsequence with all distinct characters",
-    "exIpOp": "",
-    "pattern": "Monotonic Stack",
-    "patternVariant": "Greedy + Frequency Count",
-    "difficulty": "Medium"
+    "number": 1081,
+    "title": "Smallest Subsequence of Distinct Characters",
+    "statement": "Return the lexicographically smallest subsequence that contains all distinct characters exactly once.",
+    "example": {
+      "input": "s = \"bcabc\"",
+      "output": "\"abc\"",
+      "explanation": "Removing extra characters while preserving order gives the smallest subsequence."
+    }
   },
   {
-    "name": "Next Greater Node In Linked List",
-    "lcId": 1019,
-    "description": "Find next greater value for each node",
-    "exIpOp": "",
-    "pattern": "Linked List",
-    "patternVariant": "Monotonic Stack",
-    "difficulty": "Medium"
+    "number": 1019,
+    "title": "Next Greater Node In Linked List",
+    "statement": "For each node in a linked list, find the value of the next node that has a greater value.",
+    "example": {
+      "input": "head = [2,1,5]",
+      "output": "[5,5,0]",
+      "explanation": "The next greater node for 2 is 5, for 1 is 5, and none exists for 5."
+    }
   },
   {
-    "name": "Final Prices With a Special Discount in a Shop",
-    "lcId": 1475,
-    "description": "Apply discount using next smaller element",
-    "exIpOp": "",
-    "pattern": "Monotonic Stack",
-    "patternVariant": "Next Smaller Element",
-    "difficulty": "Easy"
+    "number": 1475,
+    "title": "Final Prices With a Special Discount in a Shop",
+    "statement": "Apply a discount to each item equal to the next item with a smaller or equal price to its right.",
+    "example": {
+      "input": "prices = [8,4,6,2,3]",
+      "output": "[4,2,4,2,3]",
+      "explanation": "Each price is reduced by the next smaller or equal price to its right."
+    }
   },
   {
-    "name": "Remove All Adjacent Duplicates in String II",
-    "lcId": 1209,
-    "description": "Remove k adjacent duplicates repeatedly",
-    "exIpOp": "",
-    "pattern": "Stack",
-    "patternVariant": "Counted Stack",
-    "difficulty": "Medium"
+    "number": 1209,
+    "title": "Remove All Adjacent Duplicates in String II",
+    "statement": "Repeatedly remove groups of k adjacent duplicate characters from a string.",
+    "example": {
+      "input": "s = \"deeedbbcccbdaa\", k = 3",
+      "output": "\"aa\"",
+      "explanation": "All groups of 3 adjacent duplicates are removed iteratively."
+    }
   },
   {
-    "name": "Min Stack",
-    "lcId": 155,
-    "description": "Stack supporting constant time min retrieval",
-    "exIpOp": "",
-    "pattern": "Design",
-    "patternVariant": "Stack with Auxiliary State",
-    "difficulty": "Medium"
+    "number": 155,
+    "title": "Min Stack",
+    "statement": "Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.",
+    "example": {
+      "input": "push(-2), push(0), push(-3), getMin(), pop(), top(), getMin()",
+      "output": "-3, 0, -2",
+      "explanation": "The stack tracks the minimum element at each operation."
+    }
   },
   {
-    "name": "Longest Substring with At Most K Distinct Characters",
-    "lcId": 340,
-    "description": "Find longest substring with ≤ k distinct chars",
-    "exIpOp": "",
-    "pattern": "Sliding Window",
-    "patternVariant": "At Most K Distinct",
-    "difficulty": "Medium"
+    "number": 340,
+    "title": "Longest Substring with At Most K Distinct Characters",
+    "statement": "Find the length of the longest substring that contains at most k distinct characters.",
+    "example": {
+      "input": "s = \"eceba\", k = 2",
+      "output": "3",
+      "explanation": "The substring \"ece\" has at most 2 distinct characters and length 3."
+    }
   },
   {
-    "name": "Fruit Into Baskets",
-    "lcId": 904,
-    "description": "Longest subarray with at most two distinct values",
-    "exIpOp": "",
-    "pattern": "Sliding Window",
-    "patternVariant": "At Most K Distinct",
-    "difficulty": "Medium"
+    "number": 904,
+    "title": "Fruit Into Baskets",
+    "statement": "Return the length of the longest subarray that contains at most two distinct values.",
+    "example": {
+      "input": "fruits = [1,2,1]",
+      "output": "3",
+      "explanation": "Only two fruit types are present in the entire array."
+    }
   },
   {
-    "name": "Reverse Substrings Between Each Pair of Parentheses",
-    "lcId": 1190,
-    "description": "Reverse substrings inside parentheses",
-    "exIpOp": "",
-    "pattern": "Stack",
-    "patternVariant": "Bracket Matching",
-    "difficulty": "Medium"
+    "number": 1190,
+    "title": "Reverse Substrings Between Each Pair of Parentheses",
+    "statement": "Reverse substrings inside each pair of matching parentheses, starting from the innermost.",
+    "example": {
+      "input": "s = \"(u(love)i)\"",
+      "output": "\"iloveu\"",
+      "explanation": "Inner substrings are reversed first, then outer ones."
+    }
   },
   {
-    "name": "Asteroid Collision",
-    "lcId": 735,
-    "description": "Simulate asteroid collisions",
-    "exIpOp": "",
-    "pattern": "Stack",
-    "patternVariant": "Collision Simulation",
-    "difficulty": "Medium"
+    "number": 735,
+    "title": "Asteroid Collision",
+    "statement": "Simulate collisions between asteroids moving along a line and return the final state.",
+    "example": {
+      "input": "asteroids = [5,10,-5]",
+      "output": "[5,10]",
+      "explanation": "The asteroid -5 collides with 10 and is destroyed."
+    }
   },
   {
-    "name": "Lexicographically Minimum String After Removing Stars",
-    "lcId": 3170,
-    "description": "",
-    "exIpOp": "",
-    "pattern": "Greedy",
-    "patternVariant": "Priority + Stack",
-    "difficulty": "Medium"
+    "number": 3170,
+    "title": "Lexicographically Minimum String After Removing Stars",
+    "statement": "Remove characters based on star operations to produce the lexicographically smallest possible string.",
+    "example": {
+      "input": "s = \"aaba*\"",
+      "output": "\"aab\"",
+      "explanation": "The star removes the smallest possible character to its left."
+    }
   },
   {
-    "name": "Using a Robot to Print the Lexicographically Smallest String",
-    "lcId": 2434,
-    "description": "",
-    "exIpOp": "",
-    "pattern": "Greedy",
-    "patternVariant": "Stack + Min Suffix",
-    "difficulty": "Medium"
+    "number": 2434,
+    "title": "Using a Robot to Print the Lexicographically Smallest String",
+    "statement": "Simulate a robot using a stack to generate the lexicographically smallest string possible.",
+    "example": {
+      "input": "s = \"zza\"",
+      "output": "\"azz\"",
+      "explanation": "The robot delays printing to achieve lexicographical order."
+    }
   },
   {
-    "name": "Minimum Window Substring",
-    "lcId": 76,
-    "description": "Smallest substring containing all target characters",
-    "exIpOp": "",
-    "pattern": "Sliding Window",
-    "patternVariant": "Fixed Requirement Window",
-    "difficulty": "Hard"
+    "number": 76,
+    "title": "Minimum Window Substring",
+    "statement": "Given two strings s and t, return the minimum window substring of s such that every character in t (including duplicates) is included in the window.",
+    "example": {
+      "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
+      "output": "\"BANC\"",
+      "explanation": "The substring \"BANC\" contains all characters of t with minimum length."
+    }
   },
   {
-    "name": "Find All Anagrams in a String",
-    "lcId": 438,
-    "description": "Find starting indices of anagram substrings",
-    "exIpOp": "",
-    "pattern": "Sliding Window",
-    "patternVariant": "Frequency Matching",
-    "difficulty": "Medium"
+    "number": 438,
+    "title": "Find All Anagrams in a String",
+    "statement": "Given two strings s and p, return all the start indices of p's anagrams in s.",
+    "example": {
+      "input": "s = \"cbaebabacd\", p = \"abc\"",
+      "output": "[0, 6]",
+      "explanation": "Substrings starting at indices 0 and 6 are anagrams of \"abc\"."
+    }
   },
   {
-    "name": "Sort Characters By Frequency",
-    "lcId": 451,
-    "description": "",
-    "exIpOp": "",
-    "pattern": "Hashing",
-    "patternVariant": "Bucket Sort",
-    "difficulty": "Medium"
+    "number": 451,
+    "title": "Sort Characters By Frequency",
+    "statement": "Sort the characters in a string by decreasing frequency.",
+    "example": {
+      "input": "s = \"tree\"",
+      "output": "\"eert\"",
+      "explanation": "Characters are ordered by frequency of occurrence."
+    }
   },
   {
-    "name": "Decode String",
-    "lcId": 394,
-    "description": "Decode nested encoded strings",
-    "exIpOp": "",
-    "pattern": "Stack",
-    "patternVariant": "Nested Expansion",
-    "difficulty": "Medium"
+    "number": 394,
+    "title": "Decode String",
+    "statement": "Decode an encoded string with nested repetition patterns.",
+    "example": {
+      "input": "s = \"3[a2[c]]\"",
+      "output": "\"accaccacc\"",
+      "explanation": "The substring inside brackets is repeated based on the number."
+    }
   },
   {
-    "name": "Remove All Adjacent Duplicates In String",
-    "lcId": 1047,
-    "description": "",
-    "exIpOp": "",
-    "pattern": "Stack",
-    "patternVariant": "Pair Elimination",
-    "difficulty": "Easy"
+    "number": 1047,
+    "title": "Remove All Adjacent Duplicates In String",
+    "statement": "Remove all adjacent duplicate characters from a string repeatedly.",
+    "example": {
+      "input": "s = \"abbaca\"",
+      "output": "\"ca\"",
+      "explanation": "Adjacent duplicates are removed until no more exist."
+    }
   },
   {
-    "name": "Valid Anagram",
-    "lcId": 242,
-    "description": "",
-    "exIpOp": "",
-    "pattern": "Hashing",
-    "patternVariant": "Frequency Count",
-    "difficulty": "Easy"
+    "number": 242,
+    "title": "Valid Anagram",
+    "statement": "Determine if two strings are anagrams of each other.",
+    "example": {
+      "input": "s = \"anagram\", t = \"nagaram\"",
+      "output": "true",
+      "explanation": "Both strings contain the same characters with the same frequencies."
+    }
   },
   {
-    "name": "Backspace String Compare",
-    "lcId": 844,
-    "description": "",
-    "exIpOp": "",
-    "pattern": "Two Pointers",
-    "patternVariant": "Reverse Traversal",
-    "difficulty": "Easy"
+    "number": 844,
+    "title": "Backspace String Compare",
+    "statement": "Compare two strings after processing backspace characters.",
+    "example": {
+      "input": "s = \"ab#c\", t = \"ad#c\"",
+      "output": "true",
+      "explanation": "Both strings become \"ac\" after processing backspaces."
+    }
   },
   {
-    "name": "First Unique Character in a String",
-    "lcId": 387,
-    "description": "",
-    "exIpOp": "",
-    "pattern": "Hashing",
-    "patternVariant": "Frequency + Scan",
-    "difficulty": "Easy"
+    "number": 387,
+    "title": "First Unique Character in a String",
+    "statement": "Find the index of the first non-repeating character in a string.",
+    "example": {
+      "input": "s = \"leetcode\"",
+      "output": "0",
+      "explanation": "The character 'l' is the first character that does not repeat."
+    }
   }
 ]

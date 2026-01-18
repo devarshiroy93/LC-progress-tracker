@@ -1,38 +1,37 @@
+import { useRouter } from "next/router";
+
 export default function Home() {
+  const router = useRouter();
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 bg-slate-50">
+    <div className="min-h-screen flex items-center justify-center px-6 bg-bg">
       <div className="text-center space-y-8 max-w-sm">
 
-        {/* Heading */}
-        <h1 className="text-2xl font-semibold text-sky-600">
+        <h1 className="text-2xl font-semibold text-primary">
           DSA Recall
         </h1>
 
-        {/* Description */}
-        <p className="text-gray-600 text-sm leading-relaxed">
+        <p className="text-sm text-textSecondary">
           A minimal recall app for already-solved LeetCode problems.
         </p>
 
-        {/* Count */}
-        <p className="text-gray-500 text-sm">
-          Total problems: <span className="font-medium">180</span> and counting
+        <p className="text-sm text-textSecondary">
+          Total problems: <span className="text-textPrimary font-medium">180</span> and counting
         </p>
 
-        {/* Primary Action */}
         <button
           className="
             w-full
             px-6 py-3
             rounded-xl
-            bg-sky-500
+            bg-primary
             text-white
             text-sm
             font-semibold
-            shadow-sm
-            hover:bg-sky-600
+            hover:bg-primaryHover
             active:scale-[0.98]
             transition
           "
+          onClick={() => router.push("/mock")}
         >
           Start Mock
         </button>
