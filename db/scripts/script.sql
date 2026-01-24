@@ -16,7 +16,13 @@ returns table (
 )
 language sql
 as $$
-with latest_attempt as (
+with params as (
+  select
+    ceil(p_limit * 0.3)::int as not_solved_quota,
+    ceil(p_limit * 0.3)::int as solved_quota
+),
+
+latest_attempt as (
   select
     p.id,
     p.lc_number,
@@ -30,10 +36,7 @@ with latest_attempt as (
     a.attempt_time_seconds
   from problems p
   left join lateral (
-    select
-      status,
-      attempted_at,
-      attempt_time_seconds
+    select status, attempted_at, attempt_time_seconds
     from attempts
     where attempts.problem_id = p.id
       and attempts.user_id = p_user_id
@@ -42,24 +45,69 @@ with latest_attempt as (
   ) a on true
 ),
 
-recall_bucket as (
-  select *
-  from latest_attempt
-  where attempted_at is not null
-  order by
-    (status = 'NOT_SOLVED') desc,
-    attempt_time_seconds desc,
-    attempted_at desc
-  limit ceil(p_limit * 0.8)
+-- 1️⃣ NOT_SOLVED ranked
+not_solved_ranked as (
+  select
+    l.*,
+    row_number() over (
+      order by
+        l.attempt_time_seconds desc nulls last,
+        l.attempted_at desc
+    ) as rn
+  from latest_attempt l
+  where l.status = 'NOT_SOLVED'
 ),
 
+not_solved_bucket as (
+  select
+    id, lc_number, title, statement,
+    example_input, example_output, example_explanation,
+    status, attempted_at, attempt_time_seconds
+  from not_solved_ranked, params
+  where rn <= not_solved_quota
+),
+
+-- 2️⃣ SOLVED ranked (slow first)
+solved_ranked as (
+  select
+    l.*,
+    row_number() over (
+      order by
+        l.attempt_time_seconds desc nulls last,
+        l.attempted_at desc
+    ) as rn
+  from latest_attempt l
+  where l.status = 'SOLVED'
+    and l.id not in (select id from not_solved_bucket)
+),
+
+solved_bucket as (
+  select
+    id, lc_number, title, statement,
+    example_input, example_output, example_explanation,
+    status, attempted_at, attempt_time_seconds
+  from solved_ranked, params
+  where rn <= solved_quota
+),
+
+recall_bucket as (
+  select * from not_solved_bucket
+  union all
+  select * from solved_bucket
+),
+
+-- 3️⃣ EXPLORE (always works)
 explore_bucket as (
-  select *
+  select
+    id, lc_number, title, statement,
+    example_input, example_output, example_explanation,
+    status, attempted_at, attempt_time_seconds
   from latest_attempt
-  where attempted_at is null
-    and id not in (select id from recall_bucket)
+  where id not in (select id from recall_bucket)
   order by random()
-  limit (p_limit - (select count(*) from recall_bucket))
+  limit (
+    p_limit - (select count(*) from recall_bucket)
+  )
 )
 
 select
@@ -81,3 +129,28 @@ from (
 order by random()
 limit p_limit;
 $$;
+
+
+
+create or replace function problem_coverage_stats()
+returns table (
+  id uuid,
+  title text,
+  lc_number integer,
+  times_shown bigint,
+  last_shown_at timestamptz
+)
+language sql
+as $$
+  select
+    p.id,
+    p.title,
+    p.lc_number,
+    count(a.id) as times_shown,
+    max(a.attempted_at) as last_shown_at
+  from problems p
+  left join attempts a
+    on p.id = a.problem_id
+  group by p.id, p.title, p.lc_number;
+$$;
+
