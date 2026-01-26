@@ -154,3 +154,14 @@ as $$
   group by p.id, p.title, p.lc_number;
 $$;
 
+
+
+create table problem_exposures (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null,
+  problem_id uuid not null,
+  shown_at timestamptz not null default now(),
+
+  constraint problem_exposures_unique
+    unique (user_id, problem_id)
+);

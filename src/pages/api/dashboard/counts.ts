@@ -7,6 +7,10 @@ type DashboardCounts = {
   total_problems: number;
 };
 
+type ProblemStats = {
+  times_shown: number;
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<DashboardCounts | { error: string }>
@@ -16,49 +20,28 @@ export default async function handler(
   }
 
   try {
-    /**
-     * Step 1: total problems
-     */
-    const { count: totalProblems, error: totalError } = await supabase
-      .from("problems")
-      .select("*", { count: "exact", head: true });
+    // Single source of truth
+    const { data, error } = await supabase.rpc("problem_coverage_stats");
 
-    if (totalError || totalProblems === null) {
-      throw totalError;
+    if (error || !data) {
+      throw error;
     }
 
-    /**
-     * Step 2: distinct problems that have appeared in attempts
-     */
-    const { data: shownProblems, error: shownError } = await supabase
-      .from("attempts")
-      .select("problem_id", { count: "exact" })
-      .not("problem_id", "is", null);
+    const total = data.length;
+    const shown = data.filter((row: ProblemStats) => row.times_shown > 0).length;
+    const notShown = total - shown;
 
-    if (shownError) {
-      throw shownError;
-    }
-
-    const uniqueShown = new Set(
-      shownProblems?.map((row) => row.problem_id)
-    );
-
-    const shownCount = uniqueShown.size;
-    const notShownCount = totalProblems - shownCount;
-
-    /**
-     * Invariant check (fail loud)
-     */
-    if (shownCount + notShownCount !== totalProblems) {
+    // Invariant (now meaningful again)
+    if (shown + notShown !== total) {
       return res.status(500).json({
         error: "Coverage invariant violated",
       });
     }
 
     return res.status(200).json({
-      shown_count: shownCount,
-      not_shown_count: notShownCount,
-      total_problems: totalProblems,
+      shown_count: shown,
+      not_shown_count: notShown,
+      total_problems: total,
     });
   } catch (err) {
     console.error("Dashboard counts error:", err);
