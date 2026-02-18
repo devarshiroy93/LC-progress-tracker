@@ -132,6 +132,17 @@ $$;
 
 
 
+create table problem_exposures (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null,
+  problem_id uuid not null,
+  shown_at timestamptz not null default now(),
+
+  constraint problem_exposures_unique
+    unique (user_id, problem_id)
+);
+
+
 create or replace function problem_coverage_stats()
 returns table (
   id uuid,
@@ -146,22 +157,10 @@ as $$
     p.id,
     p.title,
     p.lc_number,
-    count(a.id) as times_shown,
-    max(a.attempted_at) as last_shown_at
+    count(e.id) as times_shown,
+    max(e.shown_at) as last_shown_at
   from problems p
-  left join attempts a
-    on p.id = a.problem_id
+  left join problem_exposures e
+    on p.id = e.problem_id
   group by p.id, p.title, p.lc_number;
 $$;
-
-
-
-create table problem_exposures (
-  id uuid primary key default gen_random_uuid(),
-  user_id uuid not null,
-  problem_id uuid not null,
-  shown_at timestamptz not null default now(),
-
-  constraint problem_exposures_unique
-    unique (user_id, problem_id)
-);
