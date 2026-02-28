@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 type Problem = {
   id: string;
   title: string;
@@ -12,6 +14,12 @@ type ProblemsListProps = {
 };
 
 export default function ProblemsList({ problems }: ProblemsListProps) {
+  const router = useRouter();
+
+  const handleClick = (id: string) => {
+    router.push(`/problems/${id}`);
+  };
+
   if (problems.length === 0) {
     return (
       <p className="text-sm text-textSecondary text-center">
@@ -25,13 +33,15 @@ export default function ProblemsList({ problems }: ProblemsListProps) {
       {problems.map((problem) => (
         <div
           key={problem.id}
-          className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm space-y-2"
+          onClick={() => handleClick(problem.id)}
+          className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm space-y-2 cursor-pointer transition hover:shadow-md hover:scale-[1.01]"
         >
           {/* Header */}
           <h3 className="text-sm font-semibold text-primary">
             {problem.title}
           </h3>
 
+          {/* Tags */}
           <div className="flex flex-wrap gap-2 text-xs text-textSecondary">
             {problem.pattern && (
               <span className="px-2 py-1 rounded bg-gray-100">
@@ -45,6 +55,7 @@ export default function ProblemsList({ problems }: ProblemsListProps) {
             )}
           </div>
 
+          {/* Stats */}
           {problem.times_shown !== undefined && (
             <p className="text-xs text-textSecondary">
               Times shown:{" "}
