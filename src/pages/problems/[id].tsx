@@ -45,7 +45,7 @@ export default function ProblemDetailPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen px-4 py-6 max-w-4xl mx-auto">
+      <main className="min-h-screen px-4 py-8 max-w-4xl mx-auto">
         <p className="text-sm text-textSecondary">Loading…</p>
       </main>
     );
@@ -53,70 +53,87 @@ export default function ProblemDetailPage() {
 
   if (error || !problem) {
     return (
-      <main className="min-h-screen px-4 py-6 max-w-4xl mx-auto">
+      <main className="min-h-screen px-4 py-8 max-w-4xl mx-auto">
         <p className="text-sm text-red-600">{error || "Problem not found"}</p>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen px-4 py-6 max-w-4xl mx-auto space-y-6">
+    <main className="min-h-screen px-4 py-8 max-w-4xl mx-auto space-y-6">
 
       {/* Back Link */}
       <Link
-        href="/problems"
+        href="/dashboard"
         className="inline-block text-sm font-medium text-primary hover:underline"
       >
         ← Back to Problems
       </Link>
 
-      {/* Header */}
-      <div className="space-y-2">
-        <h1 className="text-2xl font-bold text-textPrimary">
-          {problem.lc_number}. {problem.title}
-        </h1>
+      {/* Card */}
+      <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 space-y-6">
 
-        <div className="flex gap-4 text-sm text-textSecondary">
-          <span>Times Shown: {problem.times_shown}</span>
-          {problem.last_shown_at && (
+        {/* Header */}
+        <div className="space-y-2 border-b pb-4">
+          <h1 className="text-2xl font-bold text-textPrimary">
+            {problem.lc_number}. {problem.title}
+          </h1>
+
+          <div className="flex gap-6 text-sm text-textSecondary">
             <span>
-              Last Shown:{" "}
-              {new Date(problem.last_shown_at).toLocaleDateString()}
+              Times Shown:{" "}
+              <span className="font-medium text-textPrimary">
+                {problem.times_shown}
+              </span>
             </span>
+
+            {problem.last_shown_at && (
+              <span>
+                Last Shown:{" "}
+                {new Date(problem.last_shown_at).toLocaleDateString()}
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* Statement */}
+        <section className="space-y-3">
+          <h2 className="text-lg font-semibold text-textPrimary">
+            Problem Statement
+          </h2>
+
+          <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700">
+            {problem.statement}
+          </p>
+        </section>
+
+        {/* Example */}
+        <section className="space-y-3">
+          <h2 className="text-lg font-semibold text-textPrimary">
+            Example
+          </h2>
+
+          <div className="bg-gray-50 border rounded-lg p-4 text-sm font-mono space-y-2">
+            <p>
+              <span className="font-semibold">Input:</span>{" "}
+              {problem.example_input}
+            </p>
+
+            <p>
+              <span className="font-semibold">Output:</span>{" "}
+              {problem.example_output}
+            </p>
+          </div>
+
+          {problem.example_explanation && (
+            <p className="text-sm text-gray-600">
+              <span className="font-semibold">Explanation:</span>{" "}
+              {problem.example_explanation}
+            </p>
           )}
-        </div>
+        </section>
+
       </div>
-
-      {/* Statement */}
-      <section className="space-y-2">
-        <h2 className="text-lg font-semibold">Problem Statement</h2>
-        <p className="text-sm leading-relaxed whitespace-pre-line">
-          {problem.statement}
-        </p>
-      </section>
-
-      {/* Example */}
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">Example</h2>
-
-        <div className="bg-muted p-4 rounded-lg text-sm font-mono">
-          <p>
-            <span className="font-semibold">Input:</span>{" "}
-            {problem.example_input}
-          </p>
-          <p>
-            <span className="font-semibold">Output:</span>{" "}
-            {problem.example_output}
-          </p>
-        </div>
-
-        {problem.example_explanation && (
-          <p className="text-sm text-textSecondary">
-            <span className="font-semibold">Explanation:</span>{" "}
-            {problem.example_explanation}
-          </p>
-        )}
-      </section>
     </main>
   );
 }

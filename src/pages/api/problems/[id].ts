@@ -29,21 +29,19 @@ export default async function handler(
 
   try {
     const { data, error } = await supabase
-      .from("problems") // 🔹 change if your table name is different
+      .from("problems")
       .select(`
-        id,
-        title,
-        lc_number,
-        statement,
-        example_input,
-        example_output,
-        example_explanation,
-        times_shown,
-        last_shown_at
-      `)
+    id,
+    title,
+    lc_number,
+    statement,
+    example_input,
+    example_output,
+    example_explanation`)
       .eq("id", id)
       .single();
-
+    console.log("Supabase error:", error);
+    console.log("Supabase data:", data);
     if (error || !data) {
       return res.status(404).json({ error: "Problem not found" });
     }
