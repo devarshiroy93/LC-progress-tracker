@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { supabase } from "../../../lib/supabase";
+
+import { requireAuthenticatedUser } from "@/lib/auth/server";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
 type DashboardCounts = {
   shown_count: number;
@@ -19,9 +21,16 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  const user = await requireAuthenticatedUser(req, res);
+
+  if (!user) {
+    return;
+  }
+
   try {
-    // Single source of truth
-    const { data, error } = await supabase.rpc("problem_coverage_stats");
+    const { data, error } = await supabaseAdmin.rpc("problem_coverage_stats", {
+      p_user_id: user.id,
+    });
 
     if (error || !data) {
       throw error;
@@ -31,7 +40,6 @@ export default async function handler(
     const shown = data.filter((row: ProblemStats) => row.times_shown > 0).length;
     const notShown = total - shown;
 
-    // Invariant (now meaningful again)
     if (shown + notShown !== total) {
       return res.status(500).json({
         error: "Coverage invariant violated",

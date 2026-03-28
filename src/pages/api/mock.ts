@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { supabase } from "../../lib/supabase";
+
+import { requireAuthenticatedUser } from "@/lib/auth/server";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
 type MockProblem = {
   id: string;
@@ -19,7 +21,12 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  // ---------- Parse & validate limit ----------
+  const user = await requireAuthenticatedUser(req, res);
+
+  if (!user) {
+    return;
+  }
+
   const limitParam = req.query.limit;
   const limit = limitParam ? Number(limitParam) : 3;
 
@@ -27,12 +34,8 @@ export default async function handler(
     return res.status(400).json({ error: "Invalid limit" });
   }
 
-  // ---------- Temporary single-user setup ----------
-  const TEST_USER_ID = "eba3eaf4-407f-454a-9c35-56c3f91b86a4";
-
-  // ---------- 1️⃣ Generate mock problems ----------
-  const { data, error } = await supabase.rpc("get_mock_problems", {
-    p_user_id: TEST_USER_ID,
+  const { data, error } = await supabaseAdmin.rpc("get_mock_problems", {
+    p_user_id: user.id,
     p_limit: limit,
   });
 
@@ -42,14 +45,13 @@ export default async function handler(
 
   const problems: MockProblem[] = data ?? [];
 
-  // ---------- 2️⃣ Record problem exposure ----------
   if (problems.length > 0) {
-    const exposures = problems.map((p) => ({
-      user_id: TEST_USER_ID,
-      problem_id: p.id,
+    const exposures = problems.map((problem) => ({
+      user_id: user.id,
+      problem_id: problem.id,
     }));
 
-    const { error: exposureError } = await supabase
+    const { error: exposureError } = await supabaseAdmin
       .from("problem_exposures")
       .upsert(exposures, {
         onConflict: "user_id,problem_id",
@@ -62,8 +64,5 @@ export default async function handler(
     }
   }
 
-  // ---------- 3️⃣ Return mock ----------
-  return res.status(200).json({
-    problems,
-  });
+  return res.status(200).json({ problems });
 }

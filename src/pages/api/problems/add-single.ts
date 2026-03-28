@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { supabase } from "../../../lib/supabase";
+
+import { requireAuthenticatedUser } from "@/lib/auth/server";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
 export default async function handler(
   req: NextApiRequest,
@@ -7,6 +9,12 @@ export default async function handler(
 ) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  const user = await requireAuthenticatedUser(req, res);
+
+  if (!user) {
+    return;
   }
 
   const {
@@ -18,9 +26,6 @@ export default async function handler(
     example_explanation,
   } = req.body;
 
-  // --------------------
-  // Validation
-  // --------------------
   if (
     !lc_number ||
     !title ||
@@ -34,10 +39,7 @@ export default async function handler(
     });
   }
 
-  // --------------------
-  // Insert
-  // --------------------
-  const { data, error } = await supabase
+  const { data, error } = await supabaseAdmin
     .from("problems")
     .insert([
       {

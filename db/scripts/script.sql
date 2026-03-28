@@ -164,3 +164,72 @@ as $$
     on p.id = e.problem_id
   group by p.id, p.title, p.lc_number;
 $$;
+
+create table if not exists users (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  email text not null unique,
+  password_hash text not null,
+  created_at timestamptz not null default now()
+);
+
+create or replace function problem_coverage_stats(p_user_id uuid)
+returns table (
+  id uuid,
+  title text,
+  lc_number integer,
+  times_shown bigint,
+  last_shown_at timestamptz
+)
+language sql
+as $$
+  select
+    p.id,
+    p.title,
+    p.lc_number,
+    count(e.id) as times_shown,
+    max(e.shown_at) as last_shown_at
+  from problems p
+  left join problem_exposures e
+    on p.id = e.problem_id
+   and e.user_id = p_user_id
+  group by p.id, p.title, p.lc_number;
+$$;
+create table if not exists revisions (
+  id uuid primary key default gen_random_uuid(),
+  author_id uuid not null references users(id) on delete cascade,
+  author_name text not null,
+  title text not null,
+  linked_problem text,
+  summary text not null,
+  content_json jsonb not null,
+  code_sample text not null default '',
+  language text not null default 'javascript',
+  is_published boolean not null default false,
+  published_at timestamptz,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create index if not exists revisions_author_id_idx
+  on revisions(author_id);
+
+create index if not exists revisions_is_published_idx
+  on revisions(is_published, published_at desc nulls last);
+
+create or replace function set_updated_at()
+returns trigger
+language plpgsql
+as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$;
+
+drop trigger if exists revisions_set_updated_at on revisions;
+
+create trigger revisions_set_updated_at
+before update on revisions
+for each row
+execute function set_updated_at();

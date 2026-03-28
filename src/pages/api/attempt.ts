@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { supabase } from "../../lib/supabase";
+
+import { requireAuthenticatedUser } from "@/lib/auth/server";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,18 +11,23 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  const user = await requireAuthenticatedUser(req, res);
+
+  if (!user) {
+    return;
+  }
+
   const { problem_id, status, attempt_time_seconds } = req.body;
 
   if (!problem_id || !status || attempt_time_seconds == null) {
     return res.status(400).json({ error: "Invalid payload" });
   }
 
-  const TEST_USER_ID = 'eba3eaf4-407f-454a-9c35-56c3f91b86a4'
-  const { error } = await supabase.from("attempts").insert({
-    user_id: TEST_USER_ID,
+  const { error } = await supabaseAdmin.from("attempts").insert({
+    user_id: user.id,
     problem_id,
     status,
-    attempt_time_seconds
+    attempt_time_seconds,
   });
 
   if (error) {

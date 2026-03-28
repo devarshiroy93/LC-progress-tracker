@@ -11,16 +11,14 @@ export default async function handler(
   }
 
   const { data, error } = await supabaseAdmin
-    .from("users")
-    .select("id, name, email")
-    .limit(1);
+    .from("revisions")
+    .select("id, title, summary, author_name, linked_problem, is_published, published_at, created_at, updated_at")
+    .eq("is_published", true)
+    .order("published_at", { ascending: false });
 
   if (error) {
     return res.status(500).json({ error: error.message });
   }
 
-  return res.status(200).json({
-    status: "ok",
-    user: data?.[0] ?? null,
-  });
+  return res.status(200).json({ articles: data ?? [] });
 }

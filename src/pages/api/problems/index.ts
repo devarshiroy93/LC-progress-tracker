@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { supabase } from "@/lib/supabase";
+
+import { requireAuthenticatedUser } from "@/lib/auth/server";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
 type ProblemCoverageRow = {
   id: string;
@@ -17,6 +19,12 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  const user = await requireAuthenticatedUser(req, res);
+
+  if (!user) {
+    return;
+  }
+
   const { filter } = req.query;
 
   if (filter !== "shown" && filter !== "not_shown") {
@@ -24,9 +32,9 @@ export default async function handler(
   }
 
   try {
-    const { data, error } = await supabase.rpc(
-      "problem_coverage_stats"
-    );
+    const { data, error } = await supabaseAdmin.rpc("problem_coverage_stats", {
+      p_user_id: user.id,
+    });
 
     const typedData = data as ProblemCoverageRow[] | null;
 
@@ -35,9 +43,7 @@ export default async function handler(
     }
 
     const filtered = typedData.filter((row) =>
-      filter === "shown"
-        ? row.times_shown > 0
-        : row.times_shown === 0
+      filter === "shown" ? row.times_shown > 0 : row.times_shown === 0
     );
 
     return res.status(200).json(filtered);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Timer from "../../components/timer";
 
 type Problem = {
@@ -18,18 +18,12 @@ export default function Mock() {
   const [index, setIndex] = useState(0);
   const [showTitle, setShowTitle] = useState(false);
   const [elapsed, setElapsed] = useState(0);
-
-  // phase control
   const [phase, setPhase] = useState<Phase>("LOADING");
-
-  // stats
   const [solvedCount, setSolvedCount] = useState(0);
   const [notSolvedCount, setNotSolvedCount] = useState(0);
   const [totalTime, setTotalTime] = useState(0);
+  const hasLoadedInitialMock = useRef(false);
 
-  // --------------------
-  // Fetch mock
-  // --------------------
   const fetchMock = async () => {
     const res = await fetch("/api/mock?limit=3");
     const json = await res.json();
@@ -38,28 +32,24 @@ export default function Mock() {
     setIndex(0);
     setShowTitle(false);
     setElapsed(0);
-
-    // reset stats
     setSolvedCount(0);
     setNotSolvedCount(0);
     setTotalTime(0);
-
     setPhase("IN_PROGRESS");
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      await fetchMock();
-    };
-    fetchData();
+    if (hasLoadedInitialMock.current) {
+      return;
+    }
+
+    hasLoadedInitialMock.current = true;
+    void fetchMock();
   }, []);
 
   const problem = problems[index];
   const total = problems.length;
 
-  // --------------------
-  // Submit attempt
-  // --------------------
   const submitAttempt = async (status: "SOLVED" | "NOT_SOLVED") => {
     if (!problem) return;
 
@@ -73,42 +63,33 @@ export default function Mock() {
       }),
     });
 
-    // update local stats
     if (status === "SOLVED") {
-      setSolvedCount((c) => c + 1);
+      setSolvedCount((count) => count + 1);
     } else {
-      setNotSolvedCount((c) => c + 1);
+      setNotSolvedCount((count) => count + 1);
     }
 
-    setTotalTime((t) => t + elapsed);
-
+    setTotalTime((time) => time + elapsed);
     goNext();
   };
 
-  // --------------------
-  // Navigation
-  // --------------------
   const goNext = () => {
     setShowTitle(false);
     setElapsed(0);
 
     if (index + 1 < total) {
-      setIndex((i) => i + 1);
+      setIndex((currentIndex) => currentIndex + 1);
     } else {
-      // mock finished → summary
       setPhase("SUMMARY");
     }
   };
 
-  // --------------------
-  // SUMMARY SCREEN
-  // --------------------
   if (phase === "SUMMARY") {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center px-4">
         <div className="w-full max-w-md bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-6 text-center">
           <h2 className="text-lg font-semibold text-textPrimary">
-            Mock Completed 🎉
+            Mock Completed
           </h2>
 
           <div className="space-y-2 text-sm text-textSecondary">
@@ -154,20 +135,14 @@ export default function Mock() {
     );
   }
 
-  // --------------------
-  // LOADING
-  // --------------------
   if (phase === "LOADING") {
     return (
       <div className="min-h-screen flex items-center justify-center text-sm text-textSecondary">
-        Loading problems…
+        Loading problems...
       </div>
     );
   }
 
-  // --------------------
-  // EMPTY STATE
-  // --------------------
   if (!problem) {
     return (
       <div className="min-h-screen flex items-center justify-center text-sm text-textSecondary">
@@ -176,13 +151,9 @@ export default function Mock() {
     );
   }
 
-  // --------------------
-  // IN-PROGRESS UI
-  // --------------------
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-5">
-        {/* Top Row */}
         <div className="flex items-center justify-between text-sm text-textSecondary font-medium">
           <span>LeetCode #{problem.lc_number}</span>
           <span>
@@ -191,12 +162,10 @@ export default function Mock() {
           <Timer key={index} onTick={setElapsed} />
         </div>
 
-        {/* Statement */}
         <p className="text-sm text-textPrimary leading-relaxed">
           {problem.statement}
         </p>
 
-        {/* Example */}
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm space-y-1">
           <div>
             <span className="font-medium">Input:</span>{" "}
@@ -211,7 +180,6 @@ export default function Mock() {
           </div>
         </div>
 
-        {/* Title Reveal */}
         {!showTitle ? (
           <button
             onClick={() => setShowTitle(true)}
@@ -225,7 +193,6 @@ export default function Mock() {
           </div>
         )}
 
-        {/* Actions */}
         <div className="flex gap-4 pt-2">
           <button
             onClick={() => submitAttempt("SOLVED")}

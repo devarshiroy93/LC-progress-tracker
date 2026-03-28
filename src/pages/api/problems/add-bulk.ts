@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { supabase } from "../../../lib/supabase";
+
+import { requireAuthenticatedUser } from "@/lib/auth/server";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
 type ProblemInput = {
   lc_number: number;
@@ -18,11 +20,14 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  const user = await requireAuthenticatedUser(req, res);
+
+  if (!user) {
+    return;
+  }
+
   const { problems } = req.body;
 
-  // --------------------
-  // Validation
-  // --------------------
   if (!Array.isArray(problems) || problems.length === 0) {
     return res.status(400).json({
       error: "Problems must be a non-empty array",
@@ -46,10 +51,7 @@ export default async function handler(
     });
   }
 
-  // --------------------
-  // Insert
-  // --------------------
-  const { data, error } = await supabase
+  const { data, error } = await supabaseAdmin
     .from("problems")
     .insert(problems)
     .select();

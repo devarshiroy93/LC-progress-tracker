@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { supabase } from "@/lib/supabase";
+
+import { requireAuthenticatedUser } from "@/lib/auth/server";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
 type ProblemDetailRow = {
   id: string;
@@ -21,6 +23,12 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  const user = await requireAuthenticatedUser(req, res);
+
+  if (!user) {
+    return;
+  }
+
   const { id } = req.query;
 
   if (!id || typeof id !== "string") {
@@ -28,25 +36,46 @@ export default async function handler(
   }
 
   try {
-    const { data, error } = await supabase
+    const { data, error } = await supabaseAdmin
       .from("problems")
-      .select(`
-    id,
-    title,
-    lc_number,
-    statement,
-    example_input,
-    example_output,
-    example_explanation`)
+      .select(
+        "id, title, lc_number, statement, example_input, example_output, example_explanation"
+      )
       .eq("id", id)
       .single();
-    console.log("Supabase error:", error);
-    console.log("Supabase data:", data);
+
     if (error || !data) {
       return res.status(404).json({ error: "Problem not found" });
     }
 
-    return res.status(200).json(data as ProblemDetailRow);
+    const { count, error: countError } = await supabaseAdmin
+      .from("problem_exposures")
+      .select("id", { count: "exact", head: true })
+      .eq("problem_id", id)
+      .eq("user_id", user.id);
+
+    if (countError) {
+      return res.status(500).json({ error: countError.message });
+    }
+
+    const { data: latestExposure, error: exposureError } = await supabaseAdmin
+      .from("problem_exposures")
+      .select("shown_at")
+      .eq("problem_id", id)
+      .eq("user_id", user.id)
+      .order("shown_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    if (exposureError) {
+      return res.status(500).json({ error: exposureError.message });
+    }
+
+    return res.status(200).json({
+      ...(data as Omit<ProblemDetailRow, "times_shown" | "last_shown_at">),
+      times_shown: count ?? 0,
+      last_shown_at: latestExposure?.shown_at ?? null,
+    } satisfies ProblemDetailRow);
   } catch (err) {
     console.error("Problem detail API error:", err);
     return res.status(500).json({ error: "Internal server error" });
