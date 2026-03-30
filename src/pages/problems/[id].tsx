@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+import ProblemCodeEditor from "@/components/problems/ProblemCodeEditor";
+
 type ProblemDetail = {
   id: string;
   title: string;
@@ -21,6 +23,7 @@ export default function ProblemDetailPage() {
   const [problem, setProblem] = useState<ProblemDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showEditor, setShowEditor] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -40,13 +43,13 @@ export default function ProblemDetailPage() {
       }
     };
 
-    fetchProblem();
+    void fetchProblem();
   }, [id]);
 
   if (loading) {
     return (
       <main className="min-h-screen px-4 py-8 max-w-4xl mx-auto">
-        <p className="text-sm text-textSecondary">Loading…</p>
+        <p className="text-sm text-textSecondary">Loading...</p>
       </main>
     );
   }
@@ -60,79 +63,86 @@ export default function ProblemDetailPage() {
   }
 
   return (
-    <main className="min-h-screen px-4 py-8 max-w-4xl mx-auto space-y-6">
-
-      {/* Back Link */}
+    <main className="min-h-screen px-4 py-8 max-w-7xl mx-auto space-y-6">
       <Link
         href="/dashboard"
         className="inline-block text-sm font-medium text-primary hover:underline"
       >
-        ← Back to Problems
+        Back to Problems
       </Link>
 
-      {/* Card */}
-      <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 space-y-6">
+      <div className={`grid gap-6 ${showEditor ? "md:grid-cols-[minmax(0,1fr)_minmax(420px,0.95fr)]" : "grid-cols-1"}`}>
+        <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 space-y-6">
+          <div className="flex items-start justify-between gap-4 border-b pb-4">
+            <div className="space-y-2">
+              <h1 className="text-2xl font-bold text-textPrimary">
+                {problem.lc_number}. {problem.title}
+              </h1>
 
-        {/* Header */}
-        <div className="space-y-2 border-b pb-4">
-          <h1 className="text-2xl font-bold text-textPrimary">
-            {problem.lc_number}. {problem.title}
-          </h1>
+              <div className="flex gap-6 text-sm text-textSecondary">
+                <span>
+                  Times Shown:{" "}
+                  <span className="font-medium text-textPrimary">
+                    {problem.times_shown}
+                  </span>
+                </span>
 
-          <div className="flex gap-6 text-sm text-textSecondary">
-            <span>
-              Times Shown:{" "}
-              <span className="font-medium text-textPrimary">
-                {problem.times_shown}
-              </span>
-            </span>
+                {problem.last_shown_at && (
+                  <span>
+                    Last Shown:{" "}
+                    {new Date(problem.last_shown_at).toLocaleDateString()}
+                  </span>
+                )}
+              </div>
+            </div>
 
-            {problem.last_shown_at && (
-              <span>
-                Last Shown:{" "}
-                {new Date(problem.last_shown_at).toLocaleDateString()}
-              </span>
-            )}
+            <button
+              type="button"
+              onClick={() => setShowEditor((current) => !current)}
+              className="hidden md:inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-textPrimary transition hover:border-primary hover:text-primary"
+            >
+              <span className="font-mono text-xs">&lt;/&gt;</span>
+              {showEditor ? "Hide Code" : "Code Now"}
+            </button>
           </div>
+
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-textPrimary">
+              Problem Statement
+            </h2>
+
+            <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700">
+              {problem.statement}
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-textPrimary">
+              Example
+            </h2>
+
+            <div className="bg-gray-50 border rounded-lg p-4 text-sm font-mono space-y-2">
+              <p>
+                <span className="font-semibold">Input:</span>{" "}
+                {problem.example_input}
+              </p>
+
+              <p>
+                <span className="font-semibold">Output:</span>{" "}
+                {problem.example_output}
+              </p>
+            </div>
+
+            {problem.example_explanation && (
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold">Explanation:</span>{" "}
+                {problem.example_explanation}
+              </p>
+            )}
+          </section>
         </div>
 
-        {/* Statement */}
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold text-textPrimary">
-            Problem Statement
-          </h2>
-
-          <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700">
-            {problem.statement}
-          </p>
-        </section>
-
-        {/* Example */}
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold text-textPrimary">
-            Example
-          </h2>
-
-          <div className="bg-gray-50 border rounded-lg p-4 text-sm font-mono space-y-2">
-            <p>
-              <span className="font-semibold">Input:</span>{" "}
-              {problem.example_input}
-            </p>
-
-            <p>
-              <span className="font-semibold">Output:</span>{" "}
-              {problem.example_output}
-            </p>
-          </div>
-
-          {problem.example_explanation && (
-            <p className="text-sm text-gray-600">
-              <span className="font-semibold">Explanation:</span>{" "}
-              {problem.example_explanation}
-            </p>
-          )}
-        </section>
-
+        {showEditor && <ProblemCodeEditor />}
       </div>
     </main>
   );
