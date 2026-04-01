@@ -233,3 +233,9 @@ create trigger revisions_set_updated_at
 before update on revisions
 for each row
 execute function set_updated_at();
+alter table users
+add column if not exists role text not null default 'user';
+
+alter table users
+add constraint users_role_check
+check (role in ('user', 'admin'));

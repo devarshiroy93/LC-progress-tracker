@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 type CurrentUser = {
   id: string;
   email: string;
+  name: string;
+  role: string;
 };
 
 export default function Home() {
@@ -86,6 +88,15 @@ export default function Home() {
               >
                 Articles
               </Link>
+
+              {user.role === "admin" && (
+                <Link
+                  href="/admin"
+                  className="block text-sm font-medium text-primary hover:underline"
+                >
+                  Admin Hub
+                </Link>
+              )}
 
               <button
                 type="button"
