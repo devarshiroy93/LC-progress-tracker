@@ -239,3 +239,18 @@ add column if not exists role text not null default 'user';
 alter table users
 add constraint users_role_check
 check (role in ('user', 'admin'));
+create table if not exists progress_entries (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references users(id) on delete cascade,
+  problem_id uuid references problems(id) on delete set null,
+  lc_number integer not null,
+  heading text not null,
+  solved_on date not null,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists progress_entries_user_date_idx
+  on progress_entries(user_id, solved_on desc, created_at desc);
+
+create index if not exists progress_entries_problem_id_idx
+  on progress_entries(problem_id);

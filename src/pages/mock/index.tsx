@@ -17,6 +17,7 @@ export default function Mock() {
   const [problems, setProblems] = useState<Problem[]>([]);
   const [index, setIndex] = useState(0);
   const [showTitle, setShowTitle] = useState(false);
+  const [showTimer, setShowTimer] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const [phase, setPhase] = useState<Phase>("LOADING");
   const [solvedCount, setSolvedCount] = useState(0);
@@ -31,6 +32,7 @@ export default function Mock() {
     setProblems(json.problems ?? []);
     setIndex(0);
     setShowTitle(false);
+    setShowTimer(false);
     setElapsed(0);
     setSolvedCount(0);
     setNotSolvedCount(0);
@@ -75,6 +77,7 @@ export default function Mock() {
 
   const goNext = () => {
     setShowTitle(false);
+    setShowTimer(false);
     setElapsed(0);
 
     if (index + 1 < total) {
@@ -154,12 +157,21 @@ export default function Mock() {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-5">
-        <div className="flex items-center justify-between text-sm text-textSecondary font-medium">
+        <div className="flex items-center justify-between gap-3 text-sm text-textSecondary font-medium">
           <span>LeetCode #{problem.lc_number}</span>
           <span>
             {index + 1} / {total}
           </span>
-          <Timer key={index} onTick={setElapsed} />
+          <button
+            type="button"
+            onClick={() => setShowTimer((current) => !current)}
+            className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary transition hover:border-primary/40"
+          >
+            Timer On
+          </button>
+          <div className={showTimer ? "block" : "hidden"}>
+            <Timer key={index} onTick={setElapsed} />
+          </div>
         </div>
 
         <p className="text-sm text-textPrimary leading-relaxed">
@@ -212,3 +224,4 @@ export default function Mock() {
     </div>
   );
 }
+
