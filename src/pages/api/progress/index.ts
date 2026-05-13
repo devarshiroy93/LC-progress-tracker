@@ -20,8 +20,7 @@ export default async function handler(
         .select("id, problem_id, lc_number, heading, solved_on, created_at")
         .eq("user_id", user.id)
         .order("solved_on", { ascending: false })
-        .order("created_at", { ascending: false })
-        .limit(30),
+        .order("created_at", { ascending: false }),
       supabaseAdmin
         .from("problems")
         .select("id, lc_number, title")
